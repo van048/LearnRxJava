@@ -1,8 +1,10 @@
 package cn.ben.learnrxjava;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 
 import rx.Observable;
 import rx.functions.Action0;
@@ -55,5 +57,9 @@ public class ActionActivity extends AppCompatActivity {
         Observable.just("Hello", "World").subscribe(onNextAction, onErrorAction);
         //使用 onNextAction、 onErrorAction 和 onCompletedAction 来定义 onNext()、 onError() 和 onCompleted()
         Observable.just("Hello", "World").subscribe(onNextAction, onErrorAction, onCompletedAction);
+    }
+
+    public void jump(@SuppressWarnings("UnusedParameters") View view) {
+        startActivity(new Intent(this, MapActivity.class));
     }
 }
