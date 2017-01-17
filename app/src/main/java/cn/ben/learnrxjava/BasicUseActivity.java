@@ -1,8 +1,10 @@
 package cn.ben.learnrxjava;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +13,7 @@ import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
 
+@SuppressWarnings("UnusedAssignment")
 public class BasicUseActivity extends AppCompatActivity {
 
     private static final String TAG = BasicUseActivity.class.getSimpleName();
@@ -79,5 +82,9 @@ public class BasicUseActivity extends AppCompatActivity {
         list.add("Hello");
         list.add("World");
         Observable observable4 = Observable.from(list);
+    }
+
+    public void jump(@SuppressWarnings("UnusedParameters") View view) {
+        startActivity(new Intent(this, ActionActivity.class));
     }
 }
