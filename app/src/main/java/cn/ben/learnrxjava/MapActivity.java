@@ -89,7 +89,7 @@ public class MapActivity extends AppCompatActivity {
                 });
     }
 
-    public void jump(View view) {
+    public void jump(@SuppressWarnings("UnusedParameters") View view) {
         startActivity(new Intent(this, SchedulerActivity.class));
     }
 
